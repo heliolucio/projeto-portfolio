@@ -48,8 +48,6 @@
 						<f:facet name="header">Editar</f:facet>
 						<h:commandButton value="Editar"
 							action="#{projetoBean.editar(projeto)}" immediate="true" />
-						<h:commandLink value="Editar"
-							action="#{projetoBean.editar(projeto)}" />
 					</h:column>
 					<h:column>
 						<f:facet name="header">Excluir</f:facet>
@@ -59,8 +57,6 @@
 							<f:ajax event="blur" render="messageProjeto" />
 						</h:commandButton>
 						<h:message for="projeto" id="messageProjeto" />
-						<h:commandLink value="Excluir"
-							action="#{projetoBean.excluir(projeto)}" />
 					</h:column>
 				</h:dataTable>
 				<h:commandButton value="Cadastrar"
