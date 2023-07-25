@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+
+<h:body>
+	<h1>Edição de Projetos</h1>
+	<h:form>
+		<fieldset>
+			<legend>Dados do Projeto</legend>
+			<h:panelGrid columns="2">
+				<h:outputLabel value="Nome:" for="nome" />
+				<h:inputText id="nome" />
+				<h:outputLabel value="Data de Início:" for="dataInicio" />
+				<h:inputText id="dataInicio" />
+					<f:convertDateTime pattern="dd/MM/yyyy" timeZone="America/Sao_Paulo" />
+				<h:outputLabel value="Gerente Responsável:" for="gerente" />
+				<h:inputText id="gerente" />
+				<h:outputLabel value="Previsão de Término:" for="previsaoTermino" />
+				<h:inputText id="previsaoTermino" />
+					<f:convertDateTime pattern="dd/MM/yyyy" timeZone="America/Sao_Paulo" />
+				<h:outputLabel value="Data Real de Término:" for="dataTermino" />
+				<h:inputText id="dataTermino" />
+					<f:convertDateTime pattern="dd/MM/yyyy" timeZone="America/Sao_Paulo" />
+				<h:outputLabel value="Orçamento Total:" for="orcamento" />
+				<h:inputText id="orcamento" />
+				<h:outputLabel value="Descrição:" for="descricao" />
+				<h:inputText id="descricao" />
+				<h:outputLabel value="Status:" for="status" />
+				<h:inputText id="status" />
+				<h:outputLabel value="Risco:" for="risco" />
+				<h:selectOneMenu>
+					<f:selectItem itemLabel="Selecione" />
+					<f:selectItem itemLabel="Baixo Risco" itemValue="Baixo Risco" />
+					<f:selectItem itemLabel="Médio Risco" itemValue="Médio Risco" />
+					<f:selectItem itemLabel="Alto Risco" itemValue="Alto Risco" />
+				</h:selectOneMenu>
+				<h:commandButton value="Salvar" />
+			</h:panelGrid>
+		</fieldset>
+	</h:form>
+</h:body>
+
+
+
+</html>

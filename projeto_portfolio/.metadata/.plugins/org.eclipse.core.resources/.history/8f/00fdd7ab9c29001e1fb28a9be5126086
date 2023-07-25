@@ -1,0 +1,29 @@
+package br.com.projeto.portfolio.entity;
+
+import java.math.BigDecimal;
+import java.math.BigInteger;
+import java.util.Date;
+
+import javax.persistence.Entity;
+
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
+@Entity
+public class ProjetoEntity {
+	
+	private BigInteger id;
+	private String nome;
+	private Date dataInicio;
+	private Date dataPrevisaoFim;
+	private Date dataFim;
+	private String descricao;
+	private String status;
+	private BigDecimal orcamento;
+	private String risco;
+	private BigInteger idGerente;
+	
+
+}

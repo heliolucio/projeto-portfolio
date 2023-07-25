@@ -1,0 +1,6 @@
+package br.com.projeto.portfolio.entity;
+
+@Entity
+public class ProjetoEntity {
+
+}

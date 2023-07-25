@@ -1,0 +1,20 @@
+package br.com.projeto.portfolio.dao;
+
+import java.util.List;
+
+import br.com.projeto.portfolio.modelo.Projeto;
+
+public class DAO<T> {
+	
+	private final Class<T> classe;
+	
+	public DAO(Class<T> classe) {
+		this.classe = classe;
+	}
+
+	public List<Projeto> listarProjeto() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

@@ -1,0 +1,17 @@
+package br.com.projeto.portfolio
+.entity;
+
+import javax.persistence.Entity;
+
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
+@Entity
+public class MembrosEntity {
+	
+	private PessoaEntity idPessoa;
+	private ProjetoEntity idProjeto;
+
+}

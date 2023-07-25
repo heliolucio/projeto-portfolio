@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+<h:head />
+<h:body>
+	<h1>Cadastro de Projetos</h1>
+	<h:form	id="projeto">
+		<h:messages id="messages"/>
+		<fieldset>
+			<legend>Dados do Projeto</legend>
+			<h:panelGrid columns="2">
+				<h:outputLabel value="Nome:" for="nome" />
+				<h:inputText id="nome" value="#{projetoBean.projeto.nome}" required="true"
+					requiredMessage="Nome Obrigatório" />
+					<f:ajax event="blur" render="messages"/>
+				
+				<h:outputLabel value="Data de Início:" for="dataInicio" />
+				<h:inputText id="dataInicio"  value="#{projetoBean.projeto.dataInicio.time}">
+					<f:convertDateTime pattern="dd/MM/yyyy" timeZone="America/Sao_Paulo" />
+				</h:inputText>
+					
+				<h:outputLabel value="Gerente Responsável:" for="gerente" />
+				<h:inputText id="gerente" />
+				
+				<h:outputLabel value="Previsão de Término:" for="dataPrevisaoFim" />
+				<h:inputText id="dataPrevisaoFim" value="#{projetoBean.projeto.dataPrevisaoFim.time}">
+					<f:convertDateTime pattern="dd/MM/yyyy" timeZone="America/Sao_Paulo" />
+				</h:inputText>
+					
+				<h:outputLabel value="Data Real de Término:" for="dataFim" />
+				<h:inputText id="dataFim" value="#{projetoBean.projeto.dataFim.time}">
+					<f:convertDateTime pattern="dd/MM/yyyy" timeZone="America/Sao_Paulo" />
+				</h:inputText>
+				
+				<h:outputLabel value="Orçamento Total:" for="orcamento" />
+				<h:inputText id="orcamento" value="#{projetoBean.projeto.orcamento}"/>
+				<h:outputLabel value="Descrição:" for="descricao" />
+				<h:inputText id="descricao" value="#{projetoBean.projeto.descricao}"/>
+				<h:outputLabel value="Status:" for="status" />
+				<h:inputText id="status" />
+				<h:outputLabel value="Risco:" for="risco" />
+				<h:selectOneMenu>
+					<f:selectItem itemLabel="Selecione" />
+					<f:selectItem itemLabel="Baixo Risco"  />
+					<f:selectItem itemLabel="Médio Risco"  />
+					<f:selectItem itemLabel="Alto Risco"  />
+				</h:selectOneMenu>
+				<h:commandButton value="Salvar" action="#{projetoBean.gravar}"/>
+			</h:panelGrid>
+		</fieldset>
+	</h:form>
+</h:body>
+
+
+
+</html>

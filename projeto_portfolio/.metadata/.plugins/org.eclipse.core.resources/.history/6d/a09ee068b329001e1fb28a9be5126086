@@ -1,0 +1,11 @@
+package br.com.projeto.portfolio.dao;
+
+import br.com.projeto.portfolio.modelo.Projeto;
+
+public class ProjetoDAO {
+
+	public ProjetoDAO(Class<Projeto> class1) {
+		// TODO Auto-generated constructor stub
+	}
+
+}

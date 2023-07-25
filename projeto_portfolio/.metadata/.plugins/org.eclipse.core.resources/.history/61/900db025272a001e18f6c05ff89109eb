@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+
+<h:body>
+	<h1>Portfolio</h1>
+	<h:form id="portfolio">
+		<fieldset>
+			
+			<h:panelGrid columns="2">
+			<h:dataTable value="#{projetoBean.listarProjeto}" var="projeto">
+				<h:column>
+					<f:facet name="header">Nome</f:facet>
+					<h:outputText value="#{projeto.nome}"/>
+				</h:column>
+				<h:column>
+					<f:facet name="header">Data Início</f:facet>
+					<h:outputText value="#{projeto.dataInicio.time}">
+						<f:convertDateTime pattern="dd/MM/yyyy" timeZone="America/Sao_Paulo" />
+					</h:outputText>
+				</h:column>
+				<h:column>
+					<f:facet name="header">Previsão Fim</f:facet>
+					<h:outputText value="#{projeto.dataPrevisaoFim.time}">
+						<f:convertDateTime pattern="dd/MM/yyyy" timeZone="America/Sao_Paulo" />
+					</h:outputText>
+				</h:column>
+				<h:column>
+					<f:facet name="header">Data Fim</f:facet>
+					<h:outputText value="#{projeto.dataFim.time}">
+						<f:convertDateTime pattern="dd/MM/yyyy" timeZone="America/Sao_Paulo" />
+					</h:outputText>
+				</h:column>
+				<h:column>
+					<f:facet name="header">Orçamento Total</f:facet>
+					<h:outputText value="#{projeto.orcamento}"/>
+				</h:column>
+				<h:column>
+					<f:facet name="header">Status</f:facet>
+					<h:outputText value="#{projeto.status}"/>
+				</h:column>
+			</h:dataTable>
+				
+				<h:commandButton value="Cadastrar" />
+				<h:commandButton value="Editar" />
+				<h:commandButton value="Excluir" />
+			</h:panelGrid>
+		</fieldset>
+	</h:form>
+</h:body>
+
+
+
+</html>

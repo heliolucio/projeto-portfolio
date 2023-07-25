@@ -1,0 +1,28 @@
+package br.com.projeto.portfolio.bean;
+
+import java.util.List;
+
+import javax.annotation.ManagedBean;
+import javax.faces.bean.ViewScoped;
+
+import br.com.projeto.portfolio.dao.DAO;
+import br.com.projeto.portfolio.modelo.Projeto;
+
+@ManagedBean
+@ViewScoped
+public class ProjetoBean {
+	
+	private Projeto projeto = new Projeto();
+	
+	public List<Projeto> getProjetos(){
+		return new DAO<Projeto>(Projeto.class).listarProjeto();
+	}
+	
+	public String gravar() {
+		
+		new DAO<Projeto>(Projeto.class).cadastrar(this.projeto);
+		
+		return "portfolio?faces-redirect=true";
+	}
+
+}

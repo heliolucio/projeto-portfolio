@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;JPAUtil.java&apos; to &apos;portfolio/src/br.com.projeto.portfolio.dao&apos;&#x0D;&#x0A;- Original project: &apos;livraria&apos;&#x0D;&#x0A;- Destination element: &apos;portfolio/src/br.com.projeto.portfolio.dao&apos;&#x0D;&#x0A;- Original element: &apos;br.com.caelum.livraria.dao.JPAUtil.java&apos;" description="Copy compilation unit" destination="=portfolio/src&lt;br.com.projeto.portfolio.dao" element1="/src&lt;br.com.caelum.livraria.dao{JPAUtil.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1690156560062" units="1" version="1.0"/>
+</session>

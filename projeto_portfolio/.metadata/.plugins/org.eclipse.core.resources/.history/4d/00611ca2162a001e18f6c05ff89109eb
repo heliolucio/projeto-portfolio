@@ -1,0 +1,27 @@
+package br.com.projeto.portfolio.bean;
+
+import java.sql.SQLException;
+
+public class TesteConexaoMySQL {
+
+	public static void main(String[] args) {
+		try {
+			String connectionUrl =
+	                "jdbc:sqlserver://yourserver.database.windows.net:1433;"
+	                        + "database=AdventureWorks;"
+	                        + "user=yourusername@yourserver;"
+	                        + "password=yourpassword;"
+	                        + "encrypt=true;"
+	                        + "trustServerCertificate=false;"
+	                        + "loginTimeout=30;";
+
+		    System.out.println("Conexão realizada com sucesso.");
+		    
+		} catch (SQLException ex) {
+		    //Caso ocorram erros na tentativa de conexão com o MySQL
+		    System.out.println("SQL Exception: " + ex.getMessage());
+		    System.out.println("Código do erro: " + ex.getErrorCode());
+		}
+	}
+
+}

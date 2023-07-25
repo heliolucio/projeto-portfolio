@@ -1,0 +1,14 @@
+package br.com.projeto.portfolio.bean;
+
+import javax.annotation.ManagedBean;
+
+@ManagedBean
+public class ProjetoBean {
+	
+	public String gravar() {
+		
+		
+		return "cadastro?faces-redirect=true";
+	}
+
+}

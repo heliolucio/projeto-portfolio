@@ -1,0 +1,58 @@
+package br.com.projeto.portfolio.bean;
+
+import java.util.List;
+
+import javax.faces.application.FacesMessage;
+import javax.faces.bean.ManagedBean;
+import javax.faces.bean.ViewScoped;
+import javax.faces.context.FacesContext;
+
+import br.com.projeto.portfolio.dao.DAO;
+import br.com.projeto.portfolio.modelo.Projeto;
+
+@ManagedBean
+@ViewScoped
+public class ProjetoBean {
+	
+	private Projeto projeto = new Projeto();
+	
+	public Projeto getProjeto() {
+		return projeto;
+	}
+	
+	public List<Projeto> getProjetos(){
+		return new DAO<Projeto>(Projeto.class).listarProjeto();
+	}
+	
+	public String gravar() {
+		
+		if(this.projeto.getId() == null) {
+			//new DAO<Projeto>(Projeto.class).cadastrar(this.projeto);
+		} else {
+			new DAO<Projeto>(Projeto.class).editar(this.projeto);
+		}
+		
+		return "portfolio?faces-redirect=true";
+	}
+	
+	public String formProjeto() {
+		return "cadastro?faces-redirect=true";
+	}
+	
+	public String formEdicao() {
+		return "edicao?faces-redirect=true";
+	}
+	
+	public void excluir(Projeto projeto) {
+		
+		if(!this.projeto.getStatus().equals("Iniciado") 
+				&& !this.projeto.getStatus().equals("Em andamento")
+				&& !this.projeto.getStatus().equals("Encerrado")) {
+			new DAO<Projeto>(Projeto.class).excluir(projeto);			
+		} else {
+			FacesContext.getCurrentInstance().addMessage("projeto", new FacesMessage("Projeto não pode ser excluído caso o status for Iniciado, Em andamento ou Encerrado."));
+			return;
+		}
+	}
+
+}

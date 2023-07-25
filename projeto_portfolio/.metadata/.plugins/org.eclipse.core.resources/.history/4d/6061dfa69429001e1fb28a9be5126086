@@ -1,0 +1,5 @@
+package br.com.projeto.portfolio.entity;
+
+public class MembrosEntity {
+
+}

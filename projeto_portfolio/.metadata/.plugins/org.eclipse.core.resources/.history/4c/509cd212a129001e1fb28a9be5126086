@@ -1,0 +1,14 @@
+package br.com.projeto.portfolio.bean;
+
+import javax.annotation.ManagedBean;
+
+@ManagedBean
+public class ProjetoBean {
+	
+	public String gravar() {
+		
+		System.out.println("Chamanda o formulario do Autor");
+		return "portfolio?faces-redirect=true";
+	}
+
+}
